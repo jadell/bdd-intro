@@ -1,0 +1,10 @@
+{
+	"require": {
+		"slim/slim": "2.*",
+		"slim/views": "0.1.*",
+		"twig/twig": "1.*",
+		"behat/behat": "2.4.*@stable",
+		"behat/mink-extension": "*",
+		"behat/mink-selenium2-driver": "*"
+	}
+}

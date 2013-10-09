@@ -1,0 +1,17 @@
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Unit</th>
+		</tr>
+	</thead>
+	<thead>
+		{% for code, product in products %}
+			<tr>
+				<td><a href="/product/{{code}}">{{product.name}}</a></td>
+				<td>{{product.price}}</td>
+				<td>{{product.unit}}</td>
+			</tr>
+		{% endfor %}
+	</thead>
