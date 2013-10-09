@@ -3,12 +3,15 @@
 {% block header %}{{product.name}}{% endblock %}
 
 {% block content %}
-<div>
-	${{product.price|number_format(2,'.',',')}} per {{product.unit}}
+<div class="lead">
+	{{product.name}}
 </div>
 
 <form action="/add-to-cart" method="POST">
+	<p>
+		${{product.price|number_format(2,'.',',')}} per {{product.unit}}
+	</p>
 	<input type="hidden" name="code" value="{{code}}" />
-	<button type="submit">Add to Cart</button>
+	<button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
 </form>
 {% endblock %}

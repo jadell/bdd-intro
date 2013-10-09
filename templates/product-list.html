@@ -3,26 +3,22 @@
 {% block header %}Available Products{% endblock %}
 
 {% block content %}
-<table>
+<table class="table table-striped">
 	<thead>
 		<tr>
 			<th>Name</th>
-			<th>Price</th>
+			<th class="text-right">Price</th>
 			<th>Unit</th>
 		</tr>
 	</thead>
-	<thead>
+	<tbody>
 		{% for code, product in products %}
 			<tr>
 				<td><a href="/product/{{code}}">{{product.name}}</a></td>
-				<td>${{product.price|number_format(2,'.',',')}}</td>
+				<td class="text-right">${{product.price|number_format(2,'.',',')}}</td>
 				<td>{{product.unit}}</td>
 			</tr>
 		{% endfor %}
-	</thead>
+	</tbody>
 </table>
-{% endblock %}
-
-{% block footer %}
-	<a href="/cart">Shopping Cart</a>
 {% endblock %}
