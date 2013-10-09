@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block title %}Your Shopping Cart{% endblock %}
+{% block header %}Your Shopping Cart{% endblock %}
+
+{% block content %}
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Qty</th>
+			<th>Total</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% set grandtotal = 0 %}
+		{% for code, qty in cart %}
+			{% set product = products[code] %}
+			{% set total = product.price * qty %}
+			{% set grandtotal = grandtotal + total %}
+			<tr>
+				<td><a href="/product/{{code}}">{{product.name}}</a> {{product.unit}}</td>
+				<td>${{product.price|number_format(2,'.',',')}}</td>
+				<td>{{qty}}</td>
+				<td>${{total|number_format(2,'.',',')}}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+	<tfoot>
+		<tr>
+			<th></th>
+			<th></th>
+			<th>Total</th>
+			<th>${{grandtotal|number_format(2,'.',',')}}</th>
+		</tr>
+	</tfoot>
+</table>
+
+<form action="/clear-cart" method="POST">
+	<button type="submit">Empty Cart</button>
+</form>
+{% endblock %}

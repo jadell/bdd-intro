@@ -1,3 +1,8 @@
+{% extends 'layout.html' %}
+{% block title %}Available Products{% endblock %}
+{% block header %}Available Products{% endblock %}
+
+{% block content %}
 <table>
 	<thead>
 		<tr>
@@ -10,8 +15,14 @@
 		{% for code, product in products %}
 			<tr>
 				<td><a href="/product/{{code}}">{{product.name}}</a></td>
-				<td>{{product.price}}</td>
+				<td>${{product.price|number_format(2,'.',',')}}</td>
 				<td>{{product.unit}}</td>
 			</tr>
 		{% endfor %}
 	</thead>
+</table>
+{% endblock %}
+
+{% block footer %}
+	<a href="/cart">Shopping Cart</a>
+{% endblock %}
