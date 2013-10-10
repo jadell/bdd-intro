@@ -36,6 +36,6 @@ done
 
 # Link the binaries in vendor/bin
 cd bin
-ln -sfn ../selenium-server-standalone* selenium-server-standalone
+ln -sfn ../selenium-server-standalone* selenium-server-standalone.jar
 ln -sfn ../phantomj*/bin/phantomjs phantomjs
 ln -sfn ../chromedriver chromedriver

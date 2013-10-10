@@ -9,7 +9,9 @@
 
 <form action="/add-to-cart" method="POST">
 	<p>
-		${{product.price|number_format(2,'.',',')}} per {{product.unit}}
+		<span class="product-price">${{product.price|number_format(2,'.',',')}}</span>
+		per
+		<span class="product-unit">{{product.unit}}</span>
 	</p>
 	<input type="hidden" name="code" value="{{code}}" />
 	<button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>

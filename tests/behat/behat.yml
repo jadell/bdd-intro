@@ -8,6 +8,10 @@ default:
                 browser:        chrome
                 wd_host:        http://localhost:4444/wd/hub
 
+    context:
+        parameters:
+            stop_on_failure:    false
+
 # Overrides for phantomjs
 phantomjs:
     extensions:
