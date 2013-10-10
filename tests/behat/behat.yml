@@ -1,0 +1,17 @@
+# behat.yml - default profile if no profile specified
+default:
+    extensions:
+        Behat\MinkExtension\Extension:
+            base_url:           http://localhost:8080
+            default_session:    selenium2
+            selenium2:
+                browser:        chrome
+                wd_host:        http://localhost:4444/wd/hub
+
+# Overrides for phantomjs
+phantomjs:
+    extensions:
+        Behat\MinkExtension\Extension:
+            selenium2:
+                browser:      phantomjs
+                wd_host:      http://localhost:8643/wd/hub
