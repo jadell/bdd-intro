@@ -48,3 +48,5 @@ Scenario: Emptying the cart clears the cart of purchases
 	Then I am on the shopping cart page
 		And I have "0" items in my cart
 		And my grand total is "0.00"
+#	When I check for recent tweets
+#	Then I see a tweet about my order

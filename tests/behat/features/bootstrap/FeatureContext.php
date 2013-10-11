@@ -9,13 +9,6 @@ use Behat\Gherkin\Node\PyStringNode,
 	Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
 
-//
-// Require 3rd-party libraries here:
-//
-//   require_once 'PHPUnit/Autoload.php';
-//   require_once 'PHPUnit/Framework/Assert/Functions.php';
-//
-
 /**
  * Features context.
  */
@@ -34,6 +27,8 @@ class FeatureContext extends MinkContext
 		if (isset($parameters['stop_on_failure'])) {
 			$this->stopOnFailure = $parameters['stop_on_failure'];
 		}
+
+		// $this->useContext('twitter', new TwitterContext($parameters));
 	}
 
 
